@@ -5,6 +5,7 @@ async function repoDir(name) {
   const res = await fetch(
     `https://api.github.com/repos/arif683/${name}/contents`
   );
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const contents =  await res.json();
   return contents;
 }
